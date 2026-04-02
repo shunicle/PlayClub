@@ -1,0 +1,31 @@
+DROP DATABASE IF EXISTS testdb;
+CREATE DATABASE testdb CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+USE testdb;
+
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    login VARCHAR(50) NOT NULL UNIQUE,
+    password VARCHAR(100) NOT NULL,
+    role ENUM('manager', 'client') NOT NULL DEFAULT 'client',
+    reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE requests (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    client_id INT NOT NULL,
+    title VARCHAR(255) NOT NULL,
+    description TEXT,
+    status ENUM('New', 'In_progress', 'Completed') DEFAULT 'New',
+    created_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (client_id) REFERENCES users(id) ON DELETE CASCADE
+);
+
+INSERT INTO users (login, password, role) VALUES
+('manager', '1234', 'manager'),
+('user1', '1234', 'client'),
+('user2', '1234', 'client');
+
+INSERT INTO requests (client_id, title, description, status) VALUES
+(2, 'Бронирование ПК', 'Хочу забронировать компьютер на 3 часа', 'New'),
+(2, 'Мышка не работает', 'Мышка на месте 5 не работает', 'In_progress'),
+(3, 'Продление времени', 'Продлить игровое время на 1 час', 'Completed');

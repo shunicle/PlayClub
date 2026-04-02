@@ -1,0 +1,23 @@
+{
+  "ShowEmptyProjects": false,
+  "SelectedGroups": [
+    "C:\\Users\\User\\source\\repos\\WinFormsApp1\\WinFormsApp1\\Properties\\Resources.resx",
+    "C:\\Users\\User\\source\\repos\\WinFormsApp1\\WinFormsApp1\\Form3.resx",
+    "C:\\Users\\User\\source\\repos\\WinFormsApp1\\WinFormsApp1\\Form1.resx",
+    "C:\\Users\\User\\source\\repos\\WinFormsApp1\\WinFormsApp1\\Form2.resx"
+  ],
+  "ExpandedProjects": [],
+  "EnableSpellChecker": true,
+  "ColumnOrder": [
+    "name",
+    "file-path",
+    "file-name",
+    "type",
+    "neutral-value",
+    "neutral-comment"
+  ],
+  "VisibleColumnKeys": [
+    "name",
+    "neutral-value"
+  ]
+}
